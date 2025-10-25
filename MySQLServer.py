@@ -1,7 +1,7 @@
-
 """
 This script creates the database 'alx_book_store' in the MySQL server.
-If the database already exists, the script will not fail.
+If it already exists, the script will not fail.
+It includes error handling and does not use SELECT or SHOW statements.
 """
 
 import mysql.connector
@@ -15,9 +15,11 @@ try:
         password="9614Cream!363"
     )
 
+    
     if connection.is_connected():
         cursor = connection.cursor()
-    
+
+        
         cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store")
         print("Database 'alx_book_store' created successfully!")
 
